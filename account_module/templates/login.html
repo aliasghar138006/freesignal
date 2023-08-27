@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{#{% load static %}#}
+
+{% block refrences %}
+    <link rel="stylesheet" href="../../static/css/register.css"></link>
+{% endblock %}
+
+
+{% block title %}
+    صفحه ورود
+{% endblock %}
+
+{% block content %}
+    <main>
+    <form method="post">
+        {% csrf_token %}
+        <div class="container signupform">
+      <div class="row">
+
+
+
+
+        <div class="col-md-12">
+
+            {{ login_form.email.label_tag }}
+            {{ login_form.email }}
+            {{ login_form.email.errors }}
+
+{#          <label for="email">ایمیل</label>#}
+{#          <input type="email" placeholder="" name="email"/>#}
+        </div>
+
+        <div class="col-md-12">
+
+            {{ login_form.password.label_tag }}
+            {{ login_form.password }}
+            {{ login_form.password.errors }}
+{#          <label for="pass">پسورد</label>#}
+{#        <input type="password" placeholder="" name="pass"/>#}
+        </div>
+
+
+
+        <div class="col-md-12">
+
+        <button class="" type="submit">ورود</button>
+
+
+        </div>
+        <div class="redirect">
+            <p>حساب کاربری ندارید ثبت نام کنید </p>
+            <a href="{% url 'register_page' %}">ثبت نام</a>
+        </div>
+      </div>
+
+    </div>
+    </form>
+
+   </main>
+{% endblock %}

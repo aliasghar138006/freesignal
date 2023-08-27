@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{#{% load static %}#}
+
+{% block refrences %}
+    <link rel="stylesheet" href="../../static/css/register.css"></link>
+{% endblock %}
+
+{% block title %}
+    ثبت نام
+{% endblock %}
+
+{% block content %}
+<main>
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="container signupform">
+      <div class="row">
+        <div class="col-md-12">
+          {{ register_form.firstName.label_tag }}
+            {{ register_form.firstName }}
+            {{ register_form.firstName.errors }}
+        </div>
+
+        <div class="col-md-12">
+          {{ register_form.lastName.label_tag }}
+            {{ register_form.lastName }}
+            {{ register_form.lastName.errors }}
+        </div>
+
+        <div class="col-md-12">
+            {{ register_form.email.label_tag }}
+            {{ register_form.email }}
+            {{ register_form.email.errors }}
+
+        </div>
+
+        <div class="col-md-12">
+            {{ register_form.password.label_tag }}
+            {{ register_form.password }}
+            {{ register_form.password.errors }}
+
+        </div>
+
+        <div class="col-md-12">
+
+            {{ register_form.confirm_password.label_tag }}
+            {{ register_form.confirm_password }}
+            {{ register_form.confirm_password.errors }}
+
+        </div>
+
+        <div class="col-md-12">
+
+        <button class="" type="submit">ثبت نام</button>
+
+
+        </div>
+
+        <div class="redirect">
+          <p>حساب کاربری دارید وارد شوید</p>
+          <a href="{% url 'login_page' %}">ورود</a>
+      </div>
+      </div>
+
+    </div>
+
+    </form>
+
+   </main>
+{% endblock %}

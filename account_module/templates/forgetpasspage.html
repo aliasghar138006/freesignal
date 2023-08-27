@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block refrences %}
+    <link rel="stylesheet" href="../../static/css/register.css"></link>
+{% endblock %}
+{% block title %}
+    فراموشی رمز عبور
+{% endblock %}
+
+{% block content %}
+    <div class="container signupform" style="display: flex ;width: 50% !important ;">
+    <div class="row">
+        <div class="col-md-12 ">
+            <form method="post" style="margin: auto">
+                {% csrf_token %}
+            {{ forgetform.email.label }}
+            {{ forgetform.email }}
+            {{ forgetform.email.errors }}
+                {{ message }}
+            <button type="submit">ارسال</button>
+        </form>
+        </div>
+    </div>
+
+    </div>
+{% endblock %}

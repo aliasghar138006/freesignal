@@ -1,0 +1,19 @@
+{% load static %}
+{% load render_partial %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% include "shared/header_refrences.html" %}
+    {% block refrences %}
+
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% render_partial "home_module.views.site_header_component" %}
+    {% block content %}{% endblock %}
+    {% render_partial "home_module.views.site_footer_component" %}
+    {% include "shared/footer_refrences.html" %}
+</body>
+</html>
