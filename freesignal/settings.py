@@ -76,8 +76,7 @@ TEMPLATES = [
     },
 ]
 
-# vercel_app/settings.py
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
+WSGI_APPLICATION = 'freesignal.wsgi.application'
 
 
 # Database

@@ -15,5 +15,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'freesignal.settings')
 
 application = get_wsgi_application()
 
-# vercel_app/wsgi.py
-app = get_wsgi_application()
+app = application
